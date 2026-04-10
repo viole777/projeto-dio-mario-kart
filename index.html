@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RPG do Cloud</title>
+    <style>
+        body {
+            background: #1a1a2e;
+            color: white;
+            font-family: monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        #game {
+            background: #16213e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 800px;
+            max-width: 100%;
+        }
+        #status {
+            background: #0f3460;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        #log {
+            background: #0f3460;
+            padding: 15px;
+            border-radius: 8px;
+            height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        #actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        button {
+            background: #e94560;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #ff6b6b;
+        }
+        .hp-bar {
+            background: #333;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .hp-fill {
+            background: #4caf50;
+            height: 100%;
+            width: 100%;
+            transition: width 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div id="game">
+        <div id="status">
+            <div> HP: <span id="hp">0</span>/<span id="hpMax">0</span></div>
+            <div> Nível: <span id="lvl">0</span></div>
+            <div> XP: <span id="xp">0</span>/<span id="xpNext">0</span></div>
+            <div> Força: <span id="forca">0</span></div>
+            <div> Poder: <span id="poder">0</span></div>
+            <div> Sorte: <span id="sorte">0</span></div>
+            <div> Res: <span id="res">0</span></div>
+            <div> Vel: <span id="vel">0</span></div>
+        </div>
+        <div class="hp-bar">
+            <div class="hp-fill" id="hpBar"></div>
+        </div>
+        <div id="log">
+             Bem-vindo ao RPG do Cloud!<br>
+            Clique em "Explorar" para começar...
+        </div>
+        <div id="actions">
+            <button id="exploreBtn"> Explorar 🗺️</button>
+            <button id="attackBtn" disabled> Atacar ⚔️</button>
+            <button id="magicBtn" disabled> Magia 🔮</button>
+            <button id="fleeBtn" disabled> Fugir 🏃‍♂️</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
